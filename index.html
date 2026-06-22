@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Project Lain - The absolute peak custom firmware experience for Samsung Galaxy S20 FE">
+    <title>Project Lain</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text style='fill:%23f5c842' y='.9em' font-size='90'>L</text></svg>">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="#" class="logo">Project Lain</a>
+        
+        <div class="nav-right-section">
+            <div class="nav-menu" id="mobile-menu">
+                <a href="#features"     data-translate="features_link">Features</a>
+                <a href="#screenshots"  data-translate="screenshots_link">Screenshots</a>
+                <a href="#devices"      data-translate="devices_link">Supported Devices</a>
+                <a href="vip.html" class="nav-vip-link">⭐ Donators</a>
+            </div>
+
+            <div class="nav-controls">
+                <div class="lang-wrapper">
+                    <button id="lang-menu-btn" class="lang-btn" aria-label="Select language">
+                        <i class="fas fa-globe"></i> <span class="current-lang">EN</span>
+                    </button>
+                    <div id="lang-dropdown" class="lang-dropdown">
+                        <button class="lang-option active" data-value="en">English</button>
+                    </div>
+                </div>
+
+                <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-glow"></div>
+        <div class="hero-scroll-hint"><div class="scroll-dot"></div><span>scroll</span></div>
+    <div class="container">
+        <div class="hero-badge" data-translate="hero_badge">Android 16 Base — Now Available</div>
+        <h1 class="main-title" data-translate="main_title">Project <span>Lain</span></h1>
+        <p class="subtitle" id="hero-subtitle">Surgical optimization, unthrottled speeds, and absolute control.</p>
+        <div class="hero-buttons-container">
+            <a href="#devices" class="cta-button" data-translate="download_button">View Devices</a>
+            <a href="vip.html" class="cta-button vip-btn" data-translate="join_vip_button">Join Donators</a>
+            <a href="https://t.me/nihilupdates" target="_blank" class="cta-button-secondary" data-translate="telegram_button">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+            <a href="https://t.me/nihilupdates" target="_blank" class="cta-button-secondary" data-translate="donations_button">Donations</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label" data-translate="stat_vip">Active Donators</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-1">
+                    <div class="stat-number" data-count="1">0</div>
+                    <div class="stat-label" data-translate="stat_devices">Optimized Device</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-2">
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-label" data-translate="stat_features">Performance Tweaks</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-3">
+                    <div class="stat-number" data-versions="16.0">0</div>
+                    <div class="stat-label" data-translate="stat_base">S23+ Core Base</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="about_title">What is Project Lain?</h2>
+            <div class="section-title-line reveal"></div>
+            <p class="about-description reveal" data-translate="what_is_custom_rom">Project Lain is a performance-first custom ROM designed specifically to unlock the true power of your hardware. Built by stripping away the heavy background processes, logging, and software slop, it offers an uncompromising Android experience.</p>
+            <p class="about-description reveal reveal-delay-1" data-translate="what_is_elite_ui">Engineered with extreme precision, Project Lain focuses on blazing fast touch responsiveness, absolute privacy structure, and hyper-optimized thermal profiles to sustain peak workloads without drop-offs.</p>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="features_title">Features & Improvements</h2>
+            <div class="section-title-line reveal"></div>
+            <div class="carousel-container-features">
+                <div class="features-grid">
+                    <div class="feature-card reveal">
+                        <span class="feature-icon">🚀</span>
+                        <h3>Pure Flagship Base</h3>
+                        <p>Based on the latest premium S23+ firmware port, adapted systematically with updated blobs straight from modern flagships for an insane speed boost.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-1">
+                        <span class="feature-icon">🔥</span>
+                        <h3>Ryzen LTS Kernel</h3>
+                        <p>Driven by the ultimate Ryzen LTS kernel implementation. Zero thermal throttling, fixed FBE v1 encryption structures, and ultra-smooth framing engine configurations.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-2">
+                        <span class="feature-icon">✂️</span>
+                        <h3>Surgical Debloat</h3>
+                        <p>Lain's signature surgical debloat method removes heavy background frameworks. Nuked Galaxy AI slop, disabled tracking layers, and zero background system overhead.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-1">
+                        <span class="feature-icon">🔒</span>
+                        <h3>Hardened Privacy</h3>
+                        <p>Complete SELinux enforcement alongside patched security flags. Disabled ASKS protocols, built-in Knox patches, and a fully functional secure screenshot bypass engine.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-2">
+                        <span class="feature-icon">📱</span>
+                        <h3>Adaptive Fluidity</h3>
+                        <p>True adaptive refresh rate logic paired with explicit extra brightness support configurations. Fully operational Samsung DeX and Galaxy S25 visual setups out-of-the-box.</p>
+                    </div>
+                    <div class="feature-card reveal reveal-delay-3">
+                        <span class="feature-icon">📸</span>
+                        <h3>Full Unlocked Camera</h3>
+                        <p>Unrestricted access to the native stock Samsung Camera system with Photo Editor AI Full modules completely integrated for perfect processing control.</p>
+                    </div>
+                </div>
+                <button class="carousel-button features-prev" id="featuresPrevBtn">&#10094;</button>
+                <button class="carousel-button features-next" id="featuresNextBtn">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" class="screenshots-section">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="screenshots_title">Screenshots</h2>
+            <div class="section-title-line reveal"></div>
+            <div class="carousel-container-desktop">
+                <div class="screenshots-grid-desktop">
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot1.jpg" alt="Screenshot 1" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot2.jpg" alt="Screenshot 2" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot3.jpg" alt="Screenshot 3" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot4.jpg" alt="Screenshot 4" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot5.jpg" alt="Screenshot 5" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot6.jpg" alt="Screenshot 6" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot7.jpg" alt="Screenshot 7" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot8.jpg" alt="Screenshot 8" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot9.jpg" alt="Screenshot 9" loading="lazy"></div></div>
+                </div>
+                <button class="carousel-button desktop-prev" id="desktopPrevBtn">&#10094;</button>
+                <button class="carousel-button desktop-next" id="desktopNextBtn">&#10095;</button>
+            </div>
+            <div class="carousel-container">
+                <div class="screenshots-grid">
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot1.jpg" alt="Screenshot 1" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot2.jpg" alt="Screenshot 2" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot3.jpg" alt="Screenshot 3" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot4.jpg" alt="Screenshot 4" loading="lazy"></div></div>
+                    <div class="screenshot-item"><div class="screenshot-frame"><img src="images/screenshot5.jpg" alt="Screenshot 5" loading="lazy"></div></div>
+                </div>
+                <button class="carousel-button prev">&#10094;</button>
+                <button class="carousel-button next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="vip-promo-section">
+        <div class="container">
+            <div class="vip-promo-card reveal">
+                <span class="vip-crown">⭐</span>
+                <h2 class="vip-promo-title" data-translate="vip_promo_title">
+                    Support the Evolution — Join <span class="gold">Donators</span>
+                </h2>
+                <p class="vip-promo-desc" data-translate="vip_promo_desc">
+                    Help accelerate development and gain access to early testing structures, priority optimization updates, and tailored feature proposals before the public branch releases.
+                </p>
+                <div class="vip-benefits-mini">
+                    <span class="vip-benefit-pill">🚀 Experimental Builds</span>
+                    <span class="vip-benefit-pill">⚡ Instant Build Updates</span>
+                    <span class="vip-benefit-pill">💬 Group Priority Access</span>
+                    <span class="vip-benefit-pill">🏆 Donator Badge</span>
+                </div>
+                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                    <a href="vip.html" class="cta-button vip-btn" style="font-size:1rem; padding:15px 40px;">
+                        See Donator Plans
+                    </a>
+                    <a href="https://t.me/nihilupdates" target="_blank" class="cta-button-secondary">Join Telegram Channel</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="install-steps-section">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="install_steps_title">Installation Guide</h2>
+            <div class="section-title-line reveal"></div>
+
+            <h3>Disclaimer</h3>
+            <div class="disclaimer-box">
+                <ul>
+                    <li>Your warranty is now void.</li>
+                    <li>We are not responsible for bricked hardware, bootloops, dead storage chips, or system disruptions. Proceed solely at your own discretion.</li>
+                    <li>Ensure you verify your baseline firmware models and build compatibility maps thoroughly before attempting to flash this system!</li>
+                </ul>
+            </div>
+
+            <h3>Bootloader Unlocking</h3>
+            <ol>
+                <li>Enable Developer Options under device build parameters.</li>
+                <li>Connect the terminal interface to a workstation PC.</li>
+                <li>Hold Volume Up + Volume Down keys simultaneously during physical interface activation.</li>
+                <li>Maintain interaction status with Volume Up to initialize the custom boot environment menu.</li>
+                <li>Confirm data initialization sequence to execute bootloader state unlock configuration.</li>
+            </ol>
+
+            <h3>ROM Installation Steps</h3>
+            <ol>
+                <li>Ensure baseline device profile matches current stable firmware updates.</li>
+                <li>Confirm bootloader state parameters reflect verified status.</li>
+                <li>Deploy custom recovery environment targets (OFOX / TWRP) via standard flashing procedures.</li>
+                <li>Boot to target terminal environment, navigate to wipe parameters, and execute structural partition clear commands.</li>
+                <li>Activate ADB Sideload operations from within recovery advanced parameter listings.</li>
+                <li>Execute flashing payload sequence command string: <code>adb sideload Path\to\Lain_Build.zip</code></li>
+                <li>Execute post-installation data wipe protocol maps to resolve sector tracking parameters.</li>
+                <li>Perform system initialization commands and boot into the operating framework.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="changelog-section">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="changelog_title">Changelog Architecture</h2>
+            <div class="section-title-line reveal"></div>
+            <a target="_blank" href="changelog.html" class="cta-button-secondary reveal" style="text-decoration:none; display:inline-flex;">
+                View All Build Variants →
+            </a>
+        </div>
+    </section>
+    
+    <section id="devices" class="devices-section">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="devices_title">Supported Deployments</h2>
+            <div class="section-title-line reveal"></div>
+
+            <div class="device-list">
+                <div class="device-card reveal">
+                    <div class="device-image-wrap">
+                        <span class="device-img-fallback" style="display:block; font-size:3.5rem; filter:drop-shadow(0 0 16px rgba(245,200,66,0.35));">📱</span>
+                    </div>
+                    <div class="device-info">
+                        <p class="device-name">Galaxy S20 FE Qualcomm</p>
+                        <p class="device-codename" style="color:#f5c842;">r8q — Optimized Stable Architecture</p>
+                        <div class="device-buttons">
+                            <a href="#" onclick="alert('Head over to t.me/nihilupdates for Project Lain'); return false;" class="download-button drive-button">
+                                <i class="fab fa-google-drive"></i> <span>Drive</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <a href="#" class="footer-logo">Project Lain</a>
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#devices">Devices</a>
+                <a href="vip.html">Donators</a>
+                <a href="changelog.html">Changelog</a>
+                <a href="https://t.me/nihilupdates" target="_blank">Telegram Updates</a>
+            </div>
+            <p class="footer-credits"><strong>Lain Contributors:</strong> @salvogiangri (UN1CA patches), @ata_kaner (base kernel), @pascua14 (some patches). Lead Developer: maydasoryu (LD).</p>
+            <p class="footer-copy">&copy; 2026 Project Lain Project. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="vip.js"></script>
+</body>
+</html>

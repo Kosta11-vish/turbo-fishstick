@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Changelog — Project Lain</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text style='fill:%23f5c842' y='.9em' font-size='90'>L</text></svg>">
+    <style>
+        /* Premium Golden Accent Colors */
+        :root {
+            --premium-gold: #f5c842;
+            --premium-gold-glow: rgba(245, 200, 66, 0.25);
+            --premium-gold-dark: #cfa12b;
+        }
+
+        .changelog-version-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .changelog-version-tag::before {
+            content: '';
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--premium-gold);
+            box-shadow: 0 0 8px var(--premium-gold-glow);
+        }
+
+        .changelog-entry h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--premium-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .changelog-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.5rem;
+            background: rgba(245, 200, 66, 0.03);
+            border: 1px solid rgba(245, 200, 66, 0.1);
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-md, 8px);
+            margin-bottom: 1.25rem;
+            font-size: 0.85rem;
+        }
+
+        .changelog-meta-item strong {
+            color: var(--text);
+        }
+
+        .changelog-entry.latest {
+            border-color: rgba(245, 200, 66, 0.3);
+            background: linear-gradient(135deg, rgba(245, 200, 66, 0.06) 0%, var(--card-bg, var(--card-background)) 60%);
+        }
+
+        .changelog-entry.latest::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--premium-gold), transparent);
+        }
+
+        .changelog-entry { 
+            position: relative; 
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: var(--card-bg, rgba(255,255,255,0.02));
+            border: 1px solid var(--card-border, rgba(255,255,255,0.05));
+            border-radius: var(--radius-lg, 12px);
+        }
+
+        .changelog-hero {
+            text-align: center;
+            padding: 5rem 0 3rem;
+        }
+
+        .section-title-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--premium-gold), transparent);
+            width: 150px;
+            margin: 1rem auto 1.5rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--premium-gold); }
+        
+        .changelog-entry ul {
+            padding-left: 1.25rem;
+        }
+        
+        .changelog-entry li {
+            margin-bottom: 0.4rem;
+            color: var(--text, #e0e0e0);
+            font-size: 0.92rem;
+        }
+
+        .nav-vip-link {
+            color: var(--premium-gold) !important;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">Project Lain</a>
+        <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="mobile-menu">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#devices">Devices</a>
+            <a href="vip.html" class="nav-vip-link">⭐ Donators</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="changelog-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            <h1 class="section-title" style="font-size: clamp(2rem, 5vw, 3rem);">Changelog</h1>
+            <div class="section-title-line"></div>
+            <p class="about-description">Full release history for Project Lain — every build, every fix.</p>
+        </div>
+    </div>
+
+    <section class="changelog-content-section">
+        <div class="container">
+
+            <!-- VERSION: PROJECT AQUILES (LATEST) -->
+            <div class="changelog-entry latest reveal">
+                <div class="changelog-version-tag">Latest Build</div>
+                <h3>Lain's Project Aquiles</h3>
+                
+                <div class="changelog-meta-grid">
+                    <div class="changelog-meta-item">Device: <strong>S20 FE (r8q)</strong></div>
+                    <div class="changelog-meta-item">Android: <strong>16</strong></div>
+                    <div class="changelog-meta-item">Date: <strong>2026/06/15</strong></div>
+                    <div class="changelog-meta-item">Base: <strong>S23+ (SM-S916B)</strong></div>
+                    <div class="changelog-meta-item">System: <strong>Ext4</strong></div>
+                </div>
+
+                <p style="font-weight:600; margin-bottom:0.5rem; color: var(--premium-gold);">Changes:</p>
+                <ul>
+                    <li>Based on latest S23+ firmware.</li>
+                    <li>Added Galaxy S25 wallpapers.</li>
+                    <li>Enabled adaptive refresh rate.</li>
+                    <li>Updated blobs from a73xqxx.</li>
+                    <li>Solved system's overheating.</li>
+                    <li>Patched stock features/libs.</li>
+                    <li>BT Library Patcher included.</li>
+                    <li>Photo Editor AI Full added.</li>
+                    <li>Fixed SELinux and VNDK.</li>
+                    <li>Extra brightness support.</li>
+                    <li>Disabled heavy features.</li>
+                    <li>Full Samsung's Camera.</li>
+                    <li>Nuked Galaxy AI's slop.</li>
+                    <li>Samsung DeX support.</li>
+                    <li>Lain's surgical debloat.</li>
+                    <li>Updated to Ryzen LTS.</li>
+                    <li>Fixed FBE v1 support.</li>
+                    <li>Knox Patch included.</li>
+                    <li>Patched secure flag.</li>
+                    <li>Multi-user included.</li>
+                    <li>Disabled ASKS.</li>
+                </ul>
+            </div>
+
+            <!-- VERSION: PROJECT SAKANA -->
+            <div class="changelog-entry reveal">
+                <div class="changelog-version-tag">Stable Build</div>
+                <h3>Lain's Project Sakana</h3>
+                
+                <div class="changelog-meta-grid">
+                    <div class="changelog-meta-item">Device: <strong>S20 FE (r8q)</strong></div>
+                    <div class="changelog-meta-item">Android: <strong>14</strong></div>
+                    <div class="changelog-meta-item">Date: <strong>2026/06/03</strong></div>
+                    <div class="changelog-meta-item">Base: <strong>A52s (SM-A528B)</strong></div>
+                    <div class="changelog-meta-item">System: <strong>Ext4</strong></div>
+                </div>
+
+                <p style="font-weight:600; margin-bottom:0.5rem; color: var(--premium-gold);">Changes:</p>
+                <ul>
+                    <li>Based on latest A52s firmware.</li>
+                    <li>Included Heavy Debloat Patched.</li>
+                    <li>Disabled useless Google's features.</li>
+                    <li>Enabled Circle to Search.</li>
+                    <li>Samsung's Thermal can be disabled.</li>
+                    <li>Enhanced Blazing Fast.</li>
+                    <li>Updated Ryzen kernel.</li>
+                </ul>
+            </div>
+
+            <!-- VERSION: PROJECT VELVET -->
+            <div class="changelog-entry reveal">
+                <div class="changelog-version-tag">Initial Build</div>
+                <h3>Lain's Project Velvet</h3>
+                
+                <div class="changelog-meta-grid">
+                    <div class="changelog-meta-item">Device: <strong>S20 FE (r8q)</strong></div>
+                    <div class="changelog-meta-item">Android: <strong>15</strong></div>
+                    <div class="changelog-meta-item">Date: <strong>2026/05/31</strong></div>
+                    <div class="changelog-meta-item">Base: <strong>A73 (SM-A736B)</strong></div>
+                    <div class="changelog-meta-item">System: <strong>Ext4</strong></div>
+                </div>
+
+                <p style="font-weight:600; margin-bottom:0.5rem; color: var(--premium-gold);">Changes:</p>
+                <ul>
+                    <li>Based on first Velvet build.</li>
+                    <li>Removed Enhanced Processing.</li>
+                    <li>Disabled useless Native AI.</li>
+                    <li>Nuked CTS and Google's Hotword.</li>
+                    <li>Fixed some selinux on apps / blobs.</li>
+                    <li>Fixed IMEI/SIM detection.</li>
+                    <li>Added SamsungCamera.</li>
+                    <li>Updated Ryzen kernel.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <a href="index.html" class="footer-logo">Project Lain</a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="vip.html">Donators</a>
+                <a href="https://t.me/nihilupdates" target="_blank">Telegram</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Project Lain. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

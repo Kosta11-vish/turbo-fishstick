@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Project Lain Donator Membership — Exclusive builds, priority support and more">
+    <title>Donators — Project Lain</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous"/>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text style='fill:%23e84050' y='.9em' font-size='90'>L</text></svg>">
+    <style>
+        .vip-member-count-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 200, 66, 0.1);
+            border: 1px solid rgba(245, 200, 66, 0.3);
+            color: #f5c842;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .vip-member-count-badge::before {
+            content: '';
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #f5c842;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        .vip-section-separator {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 4rem 0;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: var(--card-bg, var(--card-background));
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s var(--ease, cubic-bezier(0.22,1,0.36,1));
+        }
+
+        .benefit-card:hover {
+            border-color: rgba(232, 64, 80, 0.3);
+            background: var(--card-bg-hover, var(--card-background));
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 8px var(--primary-glow));
+        }
+
+        .benefit-content h4 {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .benefit-content p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .pricing-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .pricing-cta-btn {
+            display: block;
+            background: linear-gradient(135deg, var(--primary-color), #c43a3a);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s var(--ease);
+        }
+
+        .pricing-cta-btn:hover {
+            box-shadow: 0 4px 20px var(--primary-glow);
+            transform: translateY(-2px);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<div id="popup-container">
+    <div id="popup-message">Copied to clipboard</div>
+</div>
+
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">Project Lain</a>
+        
+        <div class="nav-right-section">
+            <div class="nav-menu" id="mobile-menu">
+                <a href="index.html" data-translate="features_link">Home</a>
+                <a href="index.html#devices" data-translate="devices_link">Devices</a>
+                <a href="vip.html" class="nav-vip-link" data-translate="vip_link">⭐ Donators</a>
+            </div>
+
+            <div class="nav-controls">
+                <div class="lang-wrapper">
+                    <button id="lang-menu-btn" class="lang-btn" aria-label="Select language">
+                        <i class="fas fa-globe"></i> <span class="current-lang">EN</span>
+                    </button>
+                    <div id="lang-dropdown" class="lang-dropdown">
+                        <button class="lang-option active" data-value="en">English</button>
+                        <button class="lang-option" data-value="es">Español</button>
+                        <button class="lang-option" data-value="hi">हिन्दी</button>
+                        <button class="lang-option" data-value="pt">Português</button>
+                    </div>
+                </div>
+
+                <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="vip-hero">
+    <div class="container">
+        <div class="vip-member-count-badge" data-translate="vip_hero_badge">Project Support Structure</div>
+        <h1 class="vip-hero-title" data-translate="vip_hero_title">Join the <span class="gold">Donator</span> Community</h1>
+        <p class="about-description" style="margin-bottom: 2rem;" data-translate="vip_hero_desc">
+            Support Project Lain development and get access to early experimental testing builds, priority issue analysis, and a voice in feature priorities.
+        </p>
+        <a href="#plans" class="cta-button vip-btn" style="font-size:1rem; padding:15px 40px;" data-translate="vip_hero_btn">
+            ⭐ See Tiers from $2
+        </a>
+    </div>
+</header>
+
+<main>
+    <section class="vip-info-section">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="vip_benefits_title">What You Get</h2>
+            <div class="section-title-line reveal"></div>
+
+            <div class="benefit-grid">
+                <div class="benefit-card reveal">
+                    <span class="benefit-icon">🚀</span>
+                    <div class="benefit-content">
+                        <h4 data-translate="vip_benefit1_title">Experimental Builds</h4>
+                        <p data-translate="vip_benefit1_desc">Access early test builds and cutting-edge performance configurations before the public release.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal reveal-delay-1">
+                    <span class="benefit-icon">⚡</span>
+                    <div class="benefit-content">
+                        <h4 data-translate="vip_benefit2_title">Instant Updates</h4>
+                        <p data-translate="vip_benefit2_desc">Get the latest ROM revisions and hotfixes the moment they compile.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal reveal-delay-2">
+                    <span class="benefit-icon">💬</span>
+                    <div class="benefit-content">
+                        <h4 data-translate="vip_benefit3_title">Priority Feedback</h4>
+                        <p data-translate="vip_benefit3_desc">Direct communication channels. Your device logs and issues are evaluated first.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal reveal-delay-3">
+                    <span class="benefit-icon">🗳️</span>
+                    <div class="benefit-content">
+                        <h4 data-translate="vip_benefit4_title">Development Polls</h4>
+                        <p data-translate="vip_benefit4_desc">A direct vote in the future direction and feature integrations of Project Lain.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal">
+                    <span class="benefit-icon">🏆</span>
+                    <div class="benefit-content">
+                        <h4 data-translate="vip_benefit5_title">Telegram Donator Rank</h4>
+                        <p data-translate="vip_benefit5_desc">Exclusive donor status badge displayed in the official Telegram support channels.</p>
+                    </div>
+                </div>
+                <div class="benefit-card reveal reveal-delay-1">
+                    <span class="benefit-icon">🤝</span>
+                    <div class="benefit-content">
+                        <h4 data-translate="vip_benefit6_title">Keep Development Alive</h4>
+                        <p data-translate="vip_benefit6_desc">This is a voluntary contribution that directly ensures Project Lain stays active and updated.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="disclaimer-box reveal" style="margin-top:2rem;">
+                <ul>
+                    <li data-translate="vip_disc1">This is a voluntary contribution to support open-source development. Refunds are not applicable.</li>
+                    <li data-translate="vip_disc2">Access is managed via a private Telegram structure. You must provide your handle.</li>
+                    <li data-translate="vip_disc3">We reserve the right to restrict access for disruptive behavior or redistribution of closed test builds.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="vip-section-separator"></div>
+
+    <section id="plans" style="padding: 2rem 0 4rem;">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="vip_plans_section_title">Choose a Contribution Tier</h2>
+            <div class="section-title-line reveal"></div>
+            <p class="about-description reveal" data-translate="vip_plans_section_desc">Select a level that matches how much you want to support our infrastructure. ($2 USD worldwide / 8 BRL for Brazil)</p>
+
+            <div class="pricing-cards">
+                <div class="pricing-card reveal reveal-delay-1">
+                    <h3 data-translate="vip_plan1_name">1 Month Tier</h3>
+                    <div class="price">$2 / 8<span>BRL</span></div>
+                    <p data-translate="vip_plan1_desc">Great for testing out early infrastructure perks.</p>
+                </div>
+                <div class="pricing-card reveal reveal-delay-2">
+                    <h3 data-translate="vip_plan3_name">3 Month Tier</h3>
+                    <div class="price">$5 / 20<span>BRL</span></div>
+                    <p data-translate="vip_plan3_desc">Extended support duration with continuous build access.</p>
+                </div>
+                <div class="pricing-card popular reveal">
+                    <div class="badge" data-translate="vip_plan2_badge">🔥 Best Support</div>
+                    <h3 data-translate="vip_plan2_name">Full Term</h3>
+                    <div class="price">$9 / 35<span>BRL</span></div>
+                    <p data-translate="vip_plan2_desc">The ultimate way to back Project Lain and secure long-term updates.</p>
+                </div>
+                <div class="pricing-card pricing-card-lifetime reveal reveal-delay-3">
+                    <div class="badge badge-lifetime">♾️ Support++</div>
+                    <h3 data-translate="vip_plan4_name">Lifetime Supporter</h3>
+                    <div class="price">$25 / 100<span>BRL</span></div>
+                    <p data-translate="vip_plan4_desc">Contribute once, back us forever. Your status as a key supporter never expires.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p class="about-description" style="margin-bottom: 1.5rem; font-weight: 600; color: var(--text);" data-translate="vip_payment_title">
+                    Choose your donation method:
+                </p>
+                <div class="payment-buttons reveal">
+                    <button id="binance-btn" class="payment-btn">
+                        <i class="fas fa-coins"></i> Binance ID
+                    </button>
+                    <button id="usdt-btn" class="payment-btn payment-btn-usdt">
+                        <i class="fas fa-circle-dollar-to-slot"></i> USDT BEP20
+                    </button>
+                    <button id="pix-btn" class="payment-btn">
+                        <i class="fas fa-qrcode"></i> PIX (Brazil)
+                    </button>
+                </div>
+            </div>
+
+            <div class="important-note reveal" style="margin-top: 2.5rem;" data-translate="vip_payment_note">
+                <strong>IMPORTANT:</strong> After donating, send verification proof + your selected tier details on Telegram to be registered as an active project supporter.
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <a href="index.html" class="footer-logo">Project Lain</a>
+            <div class="footer-links">
+                <a href="index.html" data-translate="features_link">Home</a>
+                <a href="vip.html" data-translate="vip_link">Donators</a>
+                <a href="changelog.html" data-translate="changelog_title">Changelog</a>
+                <a href="https://t.me/projectlain" target="_blank" data-translate="telegram_button">Telegram</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Project Lain. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="vip.js"></script>
+</body>
+</html>
+            </p>
+            </div>
+
+            <div class="important-note reveal" style="margin-top: 2.5rem;" data-translate="vip_payment_note">
+                <strong>IMPORTANT:</strong> After payment, send proof of payment + your selected plan to 
+                <a href="https://t.me/elitegalaxy" target="_blank">@elitegalaxy</a> on Telegram to be added to the private VIP group.
+            </div>
+        </div>
+    </section>
+
+    <div class="vip-section-separator"></div>
+
+    <section style="padding: 2rem 0 5rem;">
+        <div class="container">
+            <h2 class="section-title reveal" data-translate="vip_members_title">Active VIP Members</h2>
+            <div class="section-title-line reveal"></div>
+            <p class="about-description reveal" data-translate="vip_members_desc">Real-time subscription status for our amazing supporters.</p>
+
+            <div class="members-filter reveal">
+                <button class="filter-btn active" data-filter="all" data-translate="vip_filter_all">All Members</button>
+                <button class="filter-btn gold" data-filter="vip-plus" data-translate="vip_filter_plus">⭐ VIP+ (Annual)</button>
+                <button class="filter-btn" data-filter="active" data-translate="vip_filter_active">Active Only</button>
+            </div>
+
+            <div id="vip-members-list" class="vip-members-grid"></div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <a href="index.html" class="footer-logo">Elite UI</a>
+            <div class="footer-links">
+                <a href="index.html" data-translate="features_link">Home</a>
+                <a href="vip.html" data-translate="vip_link">VIP</a>
+                <a href="changelog.html" data-translate="changelog_title">Changelog</a>
+                <a href="https://t.me/eliteui" target="_blank" data-translate="telegram_button">Telegram</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Elite UI Project. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="vip.js"></script>
+</body>
+</html>
